@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Two IP-backed commercialization paths prepared for a capital-readiness discussion with Vincent Haworth.">
+  <title>Two Ventures. One Disciplined Funding Plan.</title>
+  <style>
+    :root {
+      --ink: #101827;
+      --muted: #5b6575;
+      --paper: #f8f6f1;
+      --white: #fff;
+      --blue: #173f8f;
+      --cyan: #26b7d3;
+      --orange: #ff7a3d;
+      --gold: #d9a92b;
+      --line: rgba(16,24,39,.12);
+      --shadow: 0 24px 70px rgba(20,31,54,.12);
+      --radius: 26px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 4%, rgba(38,183,211,.16), transparent 24rem),
+        radial-gradient(circle at 92% 8%, rgba(255,122,61,.12), transparent 26rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(248,246,241,.88); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { font-weight: 900; letter-spacing: -.04em; }
+    .brand span { color: var(--blue); }
+    .nav-links { display: flex; gap: 18px; align-items: center; font-size: .86rem; font-weight: 750; }
+    .nav-links a { text-decoration: none; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 48px; padding: 0 20px; border-radius: 999px;
+      background: var(--ink); color: #fff; text-decoration: none; font-weight: 850;
+      box-shadow: 0 10px 24px rgba(16,24,39,.16); transition: transform .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button.light { background: #fff; color: var(--ink); border: 1px solid var(--line); box-shadow: none; }
+    .hero { padding: 88px 0 64px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .75rem; font-weight: 900; color: var(--blue); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 920px; margin-bottom: 24px; font-size: clamp(3.2rem, 8vw, 7.2rem); line-height: .91; letter-spacing: -.075em; }
+    .hero h1 em { color: var(--orange); font-style: normal; }
+    .lede { max-width: 760px; font-size: clamp(1.05rem, 2vw, 1.35rem); color: var(--muted); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .prepared { margin-top: 42px; display: flex; align-items: center; gap: 14px; color: var(--muted); font-size: .9rem; }
+    .prepared:before { content: ""; width: 52px; height: 2px; background: var(--gold); }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 90px; }
+    .venture-card { position: relative; overflow: hidden; min-height: 360px; padding: 34px; border-radius: var(--radius); color: #fff; box-shadow: var(--shadow); }
+    .venture-card.snap { background: linear-gradient(145deg, #0f2344, #2559a5); }
+    .venture-card.play { background: linear-gradient(145deg, #18222f, #374557); }
+    .venture-card:after { content: ""; position: absolute; width: 260px; height: 260px; right: -80px; bottom: -110px; border-radius: 50%; background: rgba(255,255,255,.08); }
+    .venture-card .tag { display: inline-block; padding: 7px 11px; border: 1px solid rgba(255,255,255,.26); border-radius: 999px; font-size: .7rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .venture-card h2 { margin: 72px 0 12px; font-size: clamp(2.2rem, 5vw, 4.4rem); letter-spacing: -.06em; line-height: .95; }
+    .venture-card p { max-width: 510px; color: rgba(255,255,255,.78); }
+    .metrics { display: flex; gap: 26px; flex-wrap: wrap; margin-top: 28px; }
+    .metric strong { display: block; font-size: 1.4rem; }
+    .metric span { font-size: .78rem; color: rgba(255,255,255,.68); }
+    section { padding: 86px 0; }
+    .section-head { max-width: 790px; margin-bottom: 38px; }
+    .section-head h2 { margin: 8px 0 14px; font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: .97; letter-spacing: -.06em; }
+    .section-head p { color: var(--muted); font-size: 1.08rem; }
+    .panel { background: rgba(255,255,255,.82); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .snap-layout { display: grid; grid-template-columns: 1.08fr .92fr; gap: 24px; }
+    .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
+    .gallery figure { margin: 0; overflow: hidden; border-radius: 18px; min-height: 220px; background: #e9eef4; }
+    .gallery figure:first-child { grid-column: 1 / -1; min-height: 420px; }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; }
+    .details { padding: 38px; }
+    .details h3 { font-size: 1.45rem; margin-bottom: 8px; }
+    .details p { color: var(--muted); }
+    .clean-list { list-style: none; padding: 0; margin: 26px 0 0; }
+    .clean-list li { padding: 17px 0 17px 32px; border-top: 1px solid var(--line); position: relative; }
+    .clean-list li:before { content: "✓"; position: absolute; left: 0; color: var(--blue); font-weight: 950; }
+    .play-section { background: var(--ink); color: #fff; }
+    .play-section .eyebrow { color: #75d6e8; }
+    .play-section .section-head p { color: rgba(255,255,255,.68); }
+    .quote { margin: 42px 0; max-width: 1000px; font-size: clamp(1.8rem, 4vw, 3.8rem); line-height: 1.07; letter-spacing: -.045em; font-weight: 850; }
+    .quote span { color: #75d6e8; }
+    .play-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: stretch; }
+    .voice, .demo { border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.055); border-radius: var(--radius); padding: 34px; }
+    .voice h3, .demo h3 { font-size: 1.35rem; }
+    .voice p, .demo p { color: rgba(255,255,255,.68); }
+    .voice-lines { display: grid; gap: 12px; margin-top: 26px; }
+    .voice-line { padding: 16px 18px; border-left: 3px solid var(--cyan); background: rgba(0,0,0,.18); border-radius: 0 12px 12px 0; }
+    .video-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .video-links a { display: inline-flex; align-items: center; gap: 9px; padding: 11px 15px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); color: #fff; text-decoration: none; font-size: .82rem; font-weight: 850; }
+    .video-links a:before { content: "▶"; color: var(--cyan); font-size: .72rem; }
+    .field { margin: 26px auto 0; width: min(100%, 520px); aspect-ratio: 1.65; position: relative; display: grid; grid-template-columns: repeat(3, 1fr); overflow: hidden; border: 6px solid rgba(255,255,255,.82); border-radius: 18px; background: #247443; box-shadow: inset 0 0 0 2px rgba(255,255,255,.25); }
+    .zone { display: flex; align-items: center; justify-content: center; border-right: 2px dashed rgba(255,255,255,.55); font-weight: 900; letter-spacing: .08em; color: rgba(255,255,255,.9); }
+    .zone:last-child { border-right: 0; }
+    .zone:nth-child(2) { background: rgba(255,200,42,.22); }
+    .goal { position: absolute; width: 58%; height: 55%; left: 21%; bottom: 10%; border: 7px solid #f9d85d; border-bottom: 0; pointer-events: none; }
+    .ball { position: absolute; width: 22px; height: 16px; border-radius: 50%; background: #7f4b28; left: 49%; top: 22%; transform: rotate(-24deg); box-shadow: 0 0 0 2px rgba(255,255,255,.7); }
+    .small-note { margin-top: 16px; font-size: .78rem; color: rgba(255,255,255,.48) !important; }
+    .funding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .fund-card { padding: 34px; }
+    .fund-card .amount { margin: 8px 0; font-size: clamp(2.7rem, 5vw, 4.7rem); letter-spacing: -.06em; font-weight: 950; }
+    .fund-card.snap .amount { color: var(--blue); }
+    .fund-card.play .amount { color: var(--orange); }
+    .fund-card p { color: var(--muted); }
+    .use { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
+    .use span { padding: 12px 14px; border-radius: 12px; background: #f0f3f7; font-size: .82rem; font-weight: 800; }
+    .roadmap { margin-top: 22px; display: grid; gap: 0; }
+    .step { display: grid; grid-template-columns: 76px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+    .step strong { color: var(--blue); }
+    .questions { margin-top: 24px; padding: 34px; }
+    .questions ol { margin: 16px 0 0; padding-left: 22px; color: var(--muted); }
+    .questions li { padding: 7px 0; }
+    .guardrail { padding: 70px 0; background: #efeae0; }
+    .guardrail-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; }
+    .guardrail h2 { font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1; letter-spacing: -.055em; }
+    .guardrail p { color: var(--muted); }
+    .footer { padding: 72px 0 48px; background: #0b111d; color: #fff; }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: end; }
+    .footer h2 { max-width: 760px; margin: 0 0 18px; font-size: clamp(2.5rem, 6vw, 5.8rem); line-height: .92; letter-spacing: -.065em; }
+    .footer h2 span { color: var(--cyan); }
+    .contact { color: rgba(255,255,255,.7); }
+    .contact a { color: #fff; text-decoration-color: rgba(255,255,255,.35); }
+    .legal { margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.13); color: rgba(255,255,255,.42); font-size: .74rem; }
+    @media (max-width: 820px) {
+      .nav-links a:not(.button) { display: none; }
+      .hero { padding-top: 64px; }
+      .compare, .snap-layout, .play-grid, .funding-grid, .guardrail-grid, .footer-grid { grid-template-columns: 1fr; }
+      .gallery figure:first-child { min-height: 320px; }
+      .footer-grid { align-items: start; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 24px, 1160px); }
+      .nav-inner { min-height: 62px; }
+      .button { min-height: 44px; padding: 0 15px; }
+      .hero { padding-top: 48px; }
+      .venture-card, .details, .voice, .demo, .fund-card, .questions { padding: 25px; }
+      .venture-card h2 { margin-top: 50px; }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery figure:first-child { grid-column: auto; min-height: 300px; }
+      .gallery figure { min-height: 270px; }
+      .use { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">DARYL <span>×</span> TWO VENTURES</div>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#snapblizz">SnapBlizz</a>
+        <a href="#precision-play">Precision Play</a>
+        <a href="#funding">Funding</a>
+        <a class="button" href="mailto:3iiiamb@gmail.com?subject=Funding%20discussion">Start the discussion</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Capital-readiness presentation</div>
+        <h1>Two IP-backed paths. <em>One disciplined funding plan.</em></h1>
+        <p class="lede">SnapBlizz is a physical-product commercialization opportunity supported by four issued U.S. design patents. Precision Play is a provisional-patent-pending sports interaction concept ready for a tightly scoped proof project. Each has its own milestones, capital use and risk controls.</p>
+        <div class="hero-actions">
+          <a class="button" href="#funding">See the funding lanes</a>
+          <a class="button light" href="#precision-play">Hear the Precision Play story</a>
+        </div>
+        <div class="prepared">Prepared for a capital-readiness discussion with Vincent “Vince” Haworth, FGCU SBDC Business Consultant–Capital Specialist</div>
+      </div>
+    </section>
+
+    <div class="wrap compare" aria-label="Venture comparison">
+      <article class="venture-card snap">
+        <span class="tag">Physical product</span>
+        <h2>SnapBlizz</h2>
+        <p>Patented snap-and-shape accessories designed for visible personalization across caps, apparel and adaptable surfaces.</p>
+        <div class="metrics">
+          <div class="metric"><strong>4</strong><span>issued design patents</span></div>
+          <div class="metric"><strong>$25K</strong><span>first-stage target</span></div>
+          <div class="metric"><strong>Pilot</strong><span>commercial evidence</span></div>
+        </div>
+      </article>
+      <article class="venture-card play">
+        <span class="tag">Digital interaction layer</span>
+        <h2>Precision Play</h2>
+        <p>A visual, multi-sport interaction system that turns the next live moment into an intuitive zone, target, grid or shape prediction.</p>
+        <div class="metrics">
+          <div class="metric"><strong>$50K</strong><span>proof-phase target</span></div>
+          <div class="metric"><strong>90 days</strong><span>proposed pilot</span></div>
+          <div class="metric"><strong>1 sport</strong><span>focused validation</span></div>
+        </div>
+      </article>
+    </div>
+
+    <section id="snapblizz">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Funding lane 01</div>
+          <h2>SnapBlizz: turn issued IP into a paid market test.</h2>
+          <p>The immediate objective is not a full national launch. It is a measured commercialization stage that converts existing prototypes and patent protection into supplier quotes, production samples, buyer-ready materials and a defined pilot.</p>
+        </div>
+        <div class="snap-layout">
+          <div class="panel gallery">
+            <figure><img src="images/wearable-male.jpg" alt="SnapBlizz snap-and-shape accessory worn on a cap"></figure>
+            <figure><img src="images/shape-board.jpg" alt="Collection of SnapBlizz prototype shapes"></figure>
+            <figure><img src="images/wearable-female.jpg" alt="SnapBlizz accessory worn on apparel"></figure>
+          </div>
+          <article class="panel details">
+            <h3>Commercial starting point</h3>
+            <p>Daryl retains the patent portfolio and can pursue staged commercialization, licensing by field of use, or a portfolio transaction—subject to definitive agreements.</p>
+            <ul class="clean-list">
+              <li><strong>Issued protection:</strong> U.S. design patents D753,375; D753,905; D754,950; and D754,951.</li>
+              <li><strong>Existing evidence:</strong> physical prototypes, product photography and multiple shape concepts.</li>
+              <li><strong>Stage-one proof:</strong> select one or two designs, obtain manufacturability and tooling quotes, test durability and establish unit economics.</li>
+              <li><strong>Commercial milestone:</strong> move to a paid evaluation or an approximately 1,000-unit pilot only after the economics are supported.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="precision-play" class="play-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Funding lane 02</div>
+          <h2>Precision Play: make the next sports moment visual.</h2>
+          <p>Created by Daryl Singleterry and Melody McClain, Precision Play reframes live sports interaction around simple spatial choices that can sit inside an established operator’s data, pricing, compliance and customer environment.</p>
+        </div>
+        <div class="quote">“A brand-new sports wagering innovation—the <span>next evolution</span> of sports wagering.”</div>
+        <div class="play-grid">
+          <article class="voice">
+            <h3>In Daryl and Melody’s language</h3>
+            <p>The public story is intentionally simple. The protected mechanics and implementation details remain in controlled diligence.</p>
+            <div class="voice-lines">
+              <div class="voice-line"><strong>Created together:</strong> “Together with Daryl, we created a brand-new sports wagering innovation called Precision Play.”</div>
+              <div class="voice-line"><strong>The vision:</strong> the next evolution of sports wagering—built as a feature that established platforms can evaluate for integration.</div>
+              <div class="voice-line"><strong>The invitation:</strong> licensing, equity and partnerships are all open for serious discussion.</div>
+              <div class="voice-line"><strong>“Precision Play is ready to move now.”</strong></div>
+            </div>
+            <div class="video-links" aria-label="Founder videos on TikTok">
+              <a href="https://www.tiktok.com/t/ZP8TdgH9H/" target="_blank" rel="noopener">Watch the 6:15 explanation</a>
+              <a href="https://www.tiktok.com/t/ZP8TdaJak/" target="_blank" rel="noopener">Watch the 1:49 founder clip</a>
+            </div>
+          </article>
+          <article class="demo">
+            <h3>The interaction, without disclosing the invention</h3>
+            <p>Instead of navigating a dense list of conventional bets, a participant selects a visual zone tied to the next live moment. The host platform handles lawful pricing, controls and resolution.</p>
+            <div class="field" aria-label="Non-confidential example of three visual field-goal target zones">
+              <div class="zone">LEFT</div><div class="zone">CENTER</div><div class="zone">RIGHT</div>
+              <div class="goal"></div><div class="ball"></div>
+            </div>
+            <p class="small-note">Illustrative commercial concept only—not a patent figure, odds model, operating algorithm or implementation specification.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="funding">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">The capital conversation</div>
+          <h2>Separate lanes. Defined milestones. Evidence before scale.</h2>
+          <p>The two ventures should be evaluated independently so capital sources, repayment logic, entity readiness and investor rights fit the risk profile of each project.</p>
+        </div>
+        <div class="funding-grid">
+          <article class="panel fund-card snap">
+            <div class="eyebrow">SnapBlizz first stage</div>
+            <div class="amount">$25,000</div>
+            <p>Commercialization and pilot-preparation target, with a smaller $10,000 entry stage possible if a lender or program requires tighter sequencing.</p>
+            <div class="use">
+              <span>Design refinement</span><span>Tooling quotes</span><span>Production samples</span><span>Durability testing</span><span>Packaging</span><span>Buyer materials</span><span>IP/licensing review</span><span>Pilot execution</span>
+            </div>
+          </article>
+          <article class="panel fund-card play">
+            <div class="eyebrow">Precision Play proof phase</div>
+            <div class="amount">$50,000</div>
+            <p>A focused 90-day proof project: one sport, one interaction model and measurable comprehension and engagement milestones.</p>
+            <div class="use">
+              <span>Operator discovery</span><span>Prototype UX</span><span>Data integration plan</span><span>Compliance review</span><span>Measurement design</span><span>Partner outreach</span><span>Patent counsel</span><span>Pilot delivery</span>
+            </div>
+          </article>
+        </div>
+        <div class="panel questions">
+          <h3>Questions for the capital-readiness session</h3>
+          <ol>
+            <li>Which lender, CDFI, SBA microloan, SSBCI or grant pathways best match each stage?</li>
+            <li>Should the ventures be financed through separate entities or borrowing structures?</li>
+            <li>What documentation, cash contribution, collateral or guarantee expectations should be prepared next?</li>
+            <li>What is the most credible staged request: SnapBlizz first, Precision Play second, or parallel non-debt and debt lanes?</li>
+            <li>Which local operator, manufacturing and patent-counsel referrals can accelerate verifiable milestones?</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <aside class="guardrail">
+      <div class="wrap guardrail-grid">
+        <h2>IP and deal guardrails</h2>
+        <div>
+          <p><strong>Precision Play filing status.</strong> A U.S. provisional application was filed October 24, 2025, naming Daryl Edward Singleterry and Melody McClain as applicants/inventors. Qualified patent counsel should confirm inventorship, ownership, assignments and the nonprovisional strategy before October 24, 2026.</p>
+          <p><strong>Commercial discipline.</strong> Background IP remains outside pilot work-for-hire. Any exclusivity should be narrowly defined by sport, channel, territory and time, tied to performance minimums and subject to reversion for nonperformance.</p>
+          <p><strong>Non-confidential scope.</strong> This presentation communicates the business opportunity only. Patent specifications, detailed figures, algorithms, implementation logic and other protected materials belong in controlled diligence under an appropriate NDA.</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="eyebrow">Prepared to build evidence</div>
+          <h2>Precision Play is <span>ready to move now.</span></h2>
+          <div class="contact">Daryl Singleterry · Fort Myers, Florida · <a href="tel:+16039887796">603-988-7796</a> · <a href="mailto:3iiiamb@gmail.com">3iiiamb@gmail.com</a></div>
+        </div>
+        <a class="button light" href="mailto:3iiiamb@gmail.com?subject=SnapBlizz%20and%20Precision%20Play%20funding%20discussion">Continue the discussion</a>
+      </div>
+      <div class="legal">Discussion material only. Not an offer to sell securities, a financing commitment, legal advice or a representation of affiliation with any sportsbook, sports league, investor, lender or grant program. Funding amounts and timelines are planning targets subject to diligence.</div>
+    </div>
+  </footer>
+</body>
+</html>
