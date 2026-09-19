@@ -1,0 +1,12 @@
+{
+  "name": "daryl-two-venture-funding-brief",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Banker-facing Railway presentation for SnapBlizz and Precision Play",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
